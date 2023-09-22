@@ -1,58 +1,16 @@
 <script setup lang="ts">
-import CookiesConsent from './components/cookies/CookiesConsent.vue'
-import { hasChoosenCookies, hasCookiesOpened } from './composables/cookies/useCookiesConsent'
-import { scaleBounceTransition } from './transitions'
 
-const options1 = ['one', 'two', 'three', 'four', 'five']
-const selectedOption1 = ref<string>('one')
-const search1 = ref<string>('')
-
-interface Option {
-  label: string
-  value: string
-}
-const selectedMultiple = ref<Option[]>([])
-
-const options2: Option[] = [
-  { label: 'one', value: 'one123' },
-  { label: 'two', value: 'two12312312' },
-  { label: 'three', value: 'thre3123e' },
-  { label: 'four', value: 'four3123' },
-  { label: 'five', value: 'f123123ve' },
-]
-
-const displayFunction = (value: Option | Option[]): string => {
-  if (Array.isArray(value))
-    return value.map(value => value.label).join(', ')
-
-  return value.label
-}
 </script>
 
 <template>
-  <RouterView />
-  <AppTooltip placement="left">
-    <template #element="{ events }">
-      <AppButton v-bind="events">
-        Left
-      </AppButton>
-    </template>
-    <template #tooltip>
-      <div class="rounded bg-white p-2 shadow">
-        <p class="text-sm text-gray-800">
-          Left
-        </p>
+  <div class=" h-screen w-screen">
+    <div class="absolute top-0 w-full">
+      <div class="flex w-full items-center justify-center py-4">
+        <img src="@/assets/ag.png" class="w-80 rounded bg-white p-4">
       </div>
-    </template>
-  </AppTooltip>
-
-  <AppButton @click="hasCookiesOpened = true">
-    open cookies
-  </AppButton>
-  <Transition v-bind="scaleBounceTransition">
-    <CookiesConsent v-if="!hasChoosenCookies || hasCookiesOpened" />
-  </Transition>
-  <!-- <FormSelect v-model="selectedMultiple" :display-function="(value: Option) => value" has-multiple key-value="value"> -->
+    </div>
+    <iframe class="h-full w-full" title="car" frameborder="0" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/af91c35dd1ee4afeacc89134df603fa2/embed?autostart=1" />
+  </div>
 </template>
 
 <style></style>
