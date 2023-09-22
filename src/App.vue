@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class=" h-screen w-screen">
+  <div class=" h-screen w-screen bg-black">
     <div class="absolute top-0 w-full">
       <div class="flex w-full items-center justify-center  bg-white py-4">
         <img src="@/assets/ag.png" class="w-80 ">
